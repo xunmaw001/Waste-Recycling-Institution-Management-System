@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.ShebeibaoxiuDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.ShebeibaoxiuEntity" id="shebeibaoxiuMap">
+        <result property="weixiubianhao" column="weixiubianhao"/>
+        <result property="shebeibianhao" column="shebeibianhao"/>
+        <result property="shebeimingcheng" column="shebeimingcheng"/>
+        <result property="tupian" column="tupian"/>
+        <result property="shuliang" column="shuliang"/>
+        <result property="shebeileixing" column="shebeileixing"/>
+        <result property="yongtu" column="yongtu"/>
+        <result property="zhuyishixiang" column="zhuyishixiang"/>
+        <result property="shebeixiangqing" column="shebeixiangqing"/>
+        <result property="weizhi" column="weizhi"/>
+        <result property="baoxiubeizhu" column="baoxiubeizhu"/>
+        <result property="baoxiuyuanyin" column="baoxiuyuanyin"/>
+        <result property="yuangonggonghao" column="yuangonggonghao"/>
+        <result property="yuangongxingming" column="yuangongxingming"/>
+        <result property="baoxiushijian" column="baoxiushijian"/>
+        <result property="sfsh" column="sfsh"/>
+        <result property="shhf" column="shhf"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.ShebeibaoxiuVO" >
+		SELECT * FROM shebeibaoxiu  shebeibaoxiu         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.ShebeibaoxiuVO" >
+		SELECT  shebeibaoxiu.* FROM shebeibaoxiu  shebeibaoxiu 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.ShebeibaoxiuView" >
+
+		SELECT  shebeibaoxiu.* FROM shebeibaoxiu  shebeibaoxiu 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.ShebeibaoxiuView" >
+		SELECT * FROM shebeibaoxiu  shebeibaoxiu <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
